@@ -1,1 +1,146 @@
+/* use css variables */
+:root {
+  --button-color: #e50914;
+}
 
+/* reset all */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* load Helvetic font */
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Helvetica"), url("/font/Helvetica/Helvetica.woff") format("woff");
+}
+
+body {
+  font-family: "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  background: #000;
+  color: #999;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 0.5rem 0; /*1rem - parent fontsize, by default 16px*/
+}
+
+img {
+  width: 100%;
+}
+
+/* buttons */
+.button {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  padding: 0.4rem 1rem;
+  margin-right: 0.5rem;
+  text-align: center;
+  outline: none;
+  background: var(--button-color);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 3px;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button-round {
+  border-radius: 5px;
+}
+
+.button-large {
+  font-size: 2rem;
+  padding: .8rem 1.5rem;
+  text-transform: uppercase;
+}
+
+/* swowcase */
+.showcase {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.showcase::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: inset 5px 5px 300px 100px #000;
+  z-index: 1;
+}
+
+.showcase-top {
+  height: 90px;
+  z-index: 2;
+}
+
+.showcase-top img {
+  width: 170px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-top .button-login {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 90px);
+  z-index: 2;
+}
+
+.showcase-content h1{
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 5rem;
+}
+
+.showcase-content p{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin: 2rem 0;
+}
